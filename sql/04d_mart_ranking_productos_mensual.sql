@@ -1,9 +1,3 @@
--- =====================================================================
--- 04d_mart_ranking_productos_mensual.sql — Data mart
--- =====================================================================
--- Se construye solo a partir del modelo estrella (fact_* y dim_*).
--- =====================================================================
-
 -- Ranking mensual por producto (por ventas sin IVA, ambos canales)
 CREATE TABLE mart_ranking_productos_mensual AS
 SELECT make_date(d.year, d.month, 1) AS mes,

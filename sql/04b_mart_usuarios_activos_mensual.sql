@@ -1,9 +1,3 @@
--- =====================================================================
--- 04b_mart_usuarios_activos_mensual.sql — Data mart
--- =====================================================================
--- Se construye solo a partir del modelo estrella (fact_* y dim_*).
--- =====================================================================
-
 -- Usuarios activos por mes (COUNT DISTINCT: no se puede sumar entre meses)
 CREATE TABLE mart_usuarios_activos_mensual AS
 SELECT make_date(d.year, d.month, 1)                 AS mes,

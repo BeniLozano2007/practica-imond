@@ -1,10 +1,3 @@
--- =====================================================================
--- 04a_mart_ventas_mensual.sql — Data mart
--- =====================================================================
--- Se construye solo a partir del modelo estrella (fact_* y dim_*).
--- Ticket promedio en el tablero = SUM(ventas) / SUM(pedidos)
--- =====================================================================
-
 -- Ventas por mes, canal y provincia -> Ventas, Ticket promedio, Ventas por provincia
 CREATE TABLE mart_ventas_mensual AS
 SELECT make_date(d.year, d.month, 1) AS mes,

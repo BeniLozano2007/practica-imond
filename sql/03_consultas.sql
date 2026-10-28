@@ -1,12 +1,8 @@
--- =====================================================================
--- 03_consultas.sql — Consultas para revisar el modelo y calcular KPIs
--- =====================================================================
 -- Definiciones:
 --   * Venta: pedido PAID o FULFILLED (is_sale).
 --   * Ticket promedio: ventas / pedidos.
 --   * Usuarios activos: clientes distintos que iniciaron sesión en la web.
 --   * NPS: % promotores (9-10) − % detractores (0-6).
--- =====================================================================
 
 
 -- ---------------------------------------------------------------------

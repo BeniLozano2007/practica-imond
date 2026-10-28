@@ -1,10 +1,3 @@
--- =====================================================================
--- 04c_mart_nps_mensual.sql — Data mart
--- =====================================================================
--- Se construye solo a partir del modelo estrella (fact_* y dim_*).
--- NPS en el tablero = (SUM(promotores) - SUM(detractores)) / SUM(respuestas) * 100
--- =====================================================================
-
 -- NPS por mes y canal (fecha de respuesta)
 CREATE TABLE mart_nps_mensual AS
 SELECT make_date(d.year, d.month, 1) AS mes,
