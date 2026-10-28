@@ -113,4 +113,31 @@ erDiagram
         VARCHAR source
         VARCHAR device
     }
+    mart_nps_mensual {
+        DATE mes
+        VARCHAR canal
+        BIGINT respuestas
+        HUGEINT promotores
+        HUGEINT detractores
+    }
+    mart_ranking_productos_mensual {
+        DATE mes
+        VARCHAR producto
+        HUGEINT unidades
+        DECIMAL ventas_sin_iva
+        BIGINT puesto
+    }
+    mart_usuarios_activos_mensual {
+        DATE mes
+        BIGINT usuarios_activos
+        BIGINT visitas_anonimas
+        BIGINT visitas
+    }
+    mart_ventas_mensual {
+        DATE mes
+        VARCHAR canal
+        VARCHAR provincia
+        BIGINT pedidos
+        DECIMAL ventas
+    }
 ```
