@@ -450,17 +450,20 @@ main { padding: 0 clamp(16px, 4vw, 48px); }
   main {
     display: grid;
     grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-    column-gap: 40px;
+    column-gap: 56px;
     align-items: stretch;
   }
 
   .series,
-  .cortes { grid-column: 1 / -1; }
+  .cortes {
+    grid-column: 1 / -1;
+    column-gap: 48px;
+  }
 
   .hero {
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 28px;
-    padding: 14px 0 10px;
+    padding: 22px 0 18px;
   }
 
   .hero h1 {
@@ -488,12 +491,12 @@ main { padding: 0 clamp(16px, 4vw, 48px); }
 
   .kpi,
   .kpi + .kpi {
-    padding: 8px 16px 8px 0;
+    padding: 14px 20px 14px 0;
     border-left: 0;
   }
 
   .kpi:nth-child(even) {
-    padding-left: 16px;
+    padding-left: 20px;
     border-left: 1px solid var(--linea);
   }
 
@@ -508,14 +511,15 @@ main { padding: 0 clamp(16px, 4vw, 48px); }
 
   .series { border-top: 1px solid var(--linea); }
 
-  .grafico { padding: 10px 0 4px; }
+  .grafico { padding: 20px 0 14px; }
+  .cortes .grafico { padding-top: 24px; }
   .grafico figcaption h2 { font-size: 1.05rem; }
-  .grafico figcaption p { margin: 0 0 6px; font-size: 0.82rem; }
+  .grafico figcaption p { margin: 0 0 10px; font-size: 0.82rem; }
 
   .lienzo { height: 150px; }
   .lienzo-bajo { height: 132px; }
 
-  .ranking { gap: 8px; }
+  .ranking { gap: 14px; }
   .ranking .puesto { font-size: 1.8rem; }
 
   .pie { padding-top: 10px; padding-bottom: 14px; }
