@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoBottle | Tablero comercial</title>
+  <meta name="description" content="Ventas, usuarios activos, ticket promedio y NPS de EcoBottle AR, online y en tiendas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="top">
+    <p class="brand">EcoBottle <span>tablero comercial</span></p>
+    <p class="corte">Datos al 30 de septiembre de 2025</p>
+  </header>
+
+  <form class="filtros" id="filtros" aria-label="Filtros del tablero">
+    <label class="campo">
+      <span>Período</span>
+      <select id="f-mes"></select>
+    </label>
+    <fieldset class="campo segmentos" id="f-canal">
+      <legend>Canal</legend>
+    </fieldset>
+    <label class="campo">
+      <span>Provincia</span>
+      <select id="f-provincia"></select>
+    </label>
+    <fieldset class="campo segmentos" id="f-producto">
+      <legend>Producto</legend>
+    </fieldset>
+    <button type="reset" class="limpiar" id="limpiar">Quitar filtros</button>
+  </form>
+
+  <main>
+    <section class="hero" aria-labelledby="titular">
+      <div class="hero-texto">
+        <h1 id="titular">Cargando datos…</h1>
+        <p class="hero-sub" id="hero-sub"></p>
+      </div>
+      <figure class="botella" aria-labelledby="botella-cap">
+        <svg viewBox="0 0 220 440" role="img" aria-labelledby="botella-desc" id="botella-svg">
+          <desc id="botella-desc">Botella llena con la mezcla de ventas por producto.</desc>
+          <defs>
+            <clipPath id="cuerpo">
+              <path d="M78 64 h64 v26 c0 18 34 30 34 66 v236 c0 18 -14 30 -32 30 h-68 c-18 0 -32 -12 -32 -30 v-236 c0 -36 34 -48 34 -66 z"/>
+            </clipPath>
+          </defs>
+          <rect class="tapa" x="82" y="18" width="56" height="40" rx="7"/>
+          <g clip-path="url(#cuerpo)">
+            <rect class="fondo" x="0" y="0" width="220" height="440"/>
+            <g class="capa capa-sport" id="capa-sport"><rect x="0" y="0" width="220" height="440"/></g>
+            <g class="capa capa-classic" id="capa-classic"><rect x="0" y="0" width="220" height="440"/></g>
+            <path class="ola" id="ola" d="M0 0 q27 -9 55 0 t55 0 t55 0 t55 0 v8 h-220 z"/>
+          </g>
+          <path class="contorno" d="M78 64 h64 v26 c0 18 34 30 34 66 v236 c0 18 -14 30 -32 30 h-68 c-18 0 -32 -12 -32 -30 v-236 c0 -36 34 -48 34 -66 z"/>
+          <path class="brillo" d="M62 170 v190"/>
+        </svg>
+        <figcaption id="botella-cap">
+          <p class="mezcla-titulo">¿De qué está llena la botella?</p>
+          <ul class="mezcla" id="mezcla"></ul>
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="kpis" aria-label="Indicadores principales">
+      <div class="kpi">
+        <h2>Ventas</h2>
+        <p class="valor" id="k-ventas">–</p>
+        <p class="nota" id="n-ventas">Pedidos pagados o entregados, con IVA y envío</p>
+      </div>
+      <div class="kpi">
+        <h2>Usuarios activos</h2>
+        <p class="valor" id="k-usuarios">–</p>
+        <p class="nota" id="n-usuarios">Clientes distintos que entraron a la web con su cuenta</p>
+      </div>
+      <div class="kpi">
+        <h2>Ticket promedio</h2>
+        <p class="valor" id="k-ticket">–</p>
+        <p class="nota" id="n-ticket">Lo que gasta un pedido en promedio</p>
+      </div>
+      <div class="kpi">
+        <h2>NPS</h2>
+        <p class="valor" id="k-nps">–</p>
+        <p class="nota" id="n-nps">Promotores menos detractores, de −100 a 100</p>
+      </div>
+    </section>
+
+    <section class="series" aria-label="Evolución mensual">
+      <figure class="grafico grafico-ancho">
+        <figcaption>
+          <h2>Ventas por mes</h2>
+          <p>En millones de pesos</p>
+        </figcaption>
+        <div class="lienzo"><canvas id="g-ventas" aria-label="Ventas por mes"></canvas></div>
+      </figure>
+      <figure class="grafico">
+        <figcaption>
+          <h2>Usuarios activos por mes</h2>
+          <p id="c-usuarios">Toda la web</p>
+        </figcaption>
+        <div class="lienzo"><canvas id="g-usuarios" aria-label="Usuarios activos por mes"></canvas></div>
+      </figure>
+      <figure class="grafico">
+        <figcaption>
+          <h2>NPS por mes</h2>
+          <p id="c-nps">Ambos canales</p>
+        </figcaption>
+        <div class="lienzo"><canvas id="g-nps" aria-label="NPS por mes"></canvas></div>
+      </figure>
+    </section>
+
+    <section class="cortes" aria-label="Provincias y productos">
+      <figure class="grafico">
+        <figcaption>
+          <h2>Ventas por provincia</h2>
+          <p>En millones de pesos</p>
+        </figcaption>
+        <div class="lienzo lienzo-bajo"><canvas id="g-provincias" aria-label="Ventas por provincia"></canvas></div>
+      </figure>
+      <figure class="grafico">
+        <figcaption>
+          <h2>Ranking de productos</h2>
+          <p id="c-ranking">Por ventas sin IVA</p>
+        </figcaption>
+        <ol class="ranking" id="ranking"></ol>
+      </figure>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <p>Datos: data marts de la carpeta <code>dw/</code>, generados con <code>python run_sql.py</code> a partir del modelo estrella.</p>
+  </footer>
+</body>
+</html>
