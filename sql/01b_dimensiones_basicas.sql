@@ -1,7 +1,7 @@
 -- =====================================================================
 -- 01b_dimensiones_basicas.sql — Dimensiones mínimas para las FK
 -- =====================================================================
--- Se ejecuta después de 01_dimensiones.sql (que crea dim_product)
+-- Se ejecuta después de 01a_dim_product.sql (que crea dim_product)
 -- y antes de los hechos (02a...02d), porque los hechos apuntan acá.
 --
 -- Simplificación: estas dimensiones usan la clave del origen (customer_id,
