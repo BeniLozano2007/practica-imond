@@ -24,7 +24,7 @@ Este proyecto resuelve eso con un flujo automático y repetible que deja los KPI
 raw/ (CSV de origen)
   │   ELT con SQL en DuckDB  (python run_sql.py)
   ▼
-Modelo estrella: dimensiones + hechos      sql/01*  sql/02*
+Modelo estrella: dimensiones + hechos      sql/01a_*  sql/02*
   │
   ▼
 Data marts con los KPIs ya calculados      sql/04*
@@ -39,11 +39,6 @@ GitHub Pages (URL pública)
 - **ELT:** los datos crudos se cargan primero tal como vienen (`raw/`) y se transforman después, con SQL, dentro de la base.
 - **Idempotente:** `run_sql.py` arma el data warehouse desde cero en cada ejecución, así que correrlo una o varias veces da el mismo resultado.
 - **Cálculos en SQL, no en el tablero:** los marts traen cada KPI calculado para todas las combinaciones de filtros. El tablero solo busca la fila que corresponde y la muestra.
-
-Dos decisiones respecto de la consigna original, según lo indicado en clase:
-
-- **Transformaciones en SQL:** se escriben en SQL y se ejecutan con DuckDB desde `run_sql.py`, en lugar de un script de Python por KPI.
-- **Tablero web:** se publica como sitio web (HTML, CSS y JavaScript) en GitHub Pages, en lugar de Power BI o Looker Studio.
 
 ## Cómo ejecutarlo
 
@@ -84,7 +79,7 @@ y abrir `http://localhost:8000`. Al subir los cambios a GitHub, el tablero publi
 | Carpeta / archivo | Contenido |
 |---|---|
 | `raw/` | Datos de origen: un CSV por tabla del sistema de ventas. No se modifican. |
-| `sql/01a_*.sql`, `sql/01b_*.sql` | Dimensiones del modelo estrella. |
+| `sql/01a_*.sql` | Dimensiones del modelo estrella. |
 | `sql/02a_*.sql` a `sql/02d_*.sql` | Tablas de hechos, una por archivo. |
 | `sql/03_consultas.sql` | Controles de carga y consultas de los KPIs. |
 | `sql/04a_*.sql` a `sql/04d_*.sql` | Data marts, uno por archivo. |
