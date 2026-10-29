@@ -17,7 +17,22 @@ Los datos del sistema de ventas (OLTP) están normalizados en 13 tablas y mezcla
 ## Arquitectura
 
 ```
-raw/ ─► SQL (ELT con DuckDB) ─► modelo estrella ─► data marts ─► dw/*.csv ─► tablero web ─► GitHub Pages
+raw/ (datos de origen)
+   │
+   ▼
+ELT (SQL con DuckDB)
+   │
+   ▼
+Modelo estrella
+   │
+   ▼
+Data marts
+   │
+   ▼
+Tablero web
+   │
+   ▼
+GitHub Pages
 ```
 
 - **ELT:** los datos se cargan tal como vienen y se transforman con SQL dentro de la base.
@@ -27,16 +42,43 @@ raw/ ─► SQL (ELT con DuckDB) ─► modelo estrella ─► data marts ─►
 
 ## Ejecución
 
+Requisitos: Python 3.9 o superior y Git.
+
+**1. Clonar el repositorio**
+
 ```bash
 git clone https://github.com/BeniLozano2007/practica-imond.git
 cd practica-imond
-python -m venv .venv
-.venv\Scripts\activate          # Mac / Linux: source .venv/bin/activate
-pip install -r requirements.txt
-python run_sql.py               # arma el data warehouse y exporta dw/
-python run_sql.py --ui          # opcional: explorar las tablas en el navegador
-python -m http.server           # opcional: ver el tablero en http://localhost:8000
 ```
+
+**2. Crear y activar el entorno virtual**
+
+```bash
+python -m venv .venv
+.venv\Scripts\activate
+```
+
+En Mac o Linux: `source .venv/bin/activate`.
+
+**3. Instalar las dependencias**
+
+```bash
+pip install -r requirements.txt
+```
+
+**4. Armar el data warehouse**
+
+```bash
+python run_sql.py
+```
+
+**5. Ver el tablero en la computadora** (opcional)
+
+```bash
+python -m http.server
+```
+
+Abrir `http://localhost:8000`. Para explorar las tablas: `python run_sql.py --ui`.
 
 ## Estructura
 
