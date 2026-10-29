@@ -1,43 +1,67 @@
-mes,canal,respuestas,promotores,detractores
-2024-01-01,Tienda Online,44,19,7
-2024-01-01,Tiendas Físicas,41,25,5
-2024-02-01,Tienda Online,65,29,13
-2024-02-01,Tiendas Físicas,51,24,7
-2024-03-01,Tienda Online,88,40,16
-2024-03-01,Tiendas Físicas,56,25,8
-2024-04-01,Tienda Online,80,29,16
-2024-04-01,Tiendas Físicas,44,20,5
-2024-05-01,Tienda Online,84,34,13
-2024-05-01,Tiendas Físicas,50,27,7
-2024-06-01,Tienda Online,89,39,13
-2024-06-01,Tiendas Físicas,60,29,6
-2024-07-01,Tienda Online,50,16,19
-2024-07-01,Tiendas Físicas,47,26,8
-2024-08-01,Tienda Online,68,16,34
-2024-08-01,Tiendas Físicas,52,29,5
-2024-09-01,Tienda Online,106,33,35
-2024-09-01,Tiendas Físicas,62,32,10
-2024-10-01,Tienda Online,94,42,12
-2024-10-01,Tiendas Físicas,42,22,5
-2024-11-01,Tienda Online,121,59,16
-2024-11-01,Tiendas Físicas,48,25,4
-2024-12-01,Tienda Online,139,55,27
-2024-12-01,Tiendas Físicas,78,45,7
-2025-01-01,Tienda Online,136,63,25
-2025-01-01,Tiendas Físicas,55,29,6
-2025-02-01,Tienda Online,99,46,13
-2025-02-01,Tiendas Físicas,63,38,2
-2025-03-01,Tienda Online,111,48,14
-2025-03-01,Tiendas Físicas,74,41,13
-2025-04-01,Tienda Online,100,52,17
-2025-04-01,Tiendas Físicas,44,24,6
-2025-05-01,Tienda Online,117,58,21
-2025-05-01,Tiendas Físicas,41,24,4
-2025-06-01,Tienda Online,101,48,11
-2025-06-01,Tiendas Físicas,62,31,6
-2025-07-01,Tienda Online,102,42,16
-2025-07-01,Tiendas Físicas,41,20,6
-2025-08-01,Tienda Online,93,37,15
-2025-08-01,Tiendas Físicas,52,25,4
-2025-09-01,Tienda Online,104,49,23
-2025-09-01,Tiendas Físicas,29,13,3
+mes,canal,respuestas,promotores,detractores,nps
+2024-01,Tienda Online,44,19,7,27.3
+2024-01,Tiendas Físicas,41,25,5,48.8
+2024-01,Todos,85,44,12,37.6
+2024-02,Tienda Online,65,29,13,24.6
+2024-02,Tiendas Físicas,51,24,7,33.3
+2024-02,Todos,116,53,20,28.4
+2024-03,Tienda Online,88,40,16,27.3
+2024-03,Tiendas Físicas,56,25,8,30.4
+2024-03,Todos,144,65,24,28.5
+2024-04,Tienda Online,80,29,16,16.2
+2024-04,Tiendas Físicas,44,20,5,34.1
+2024-04,Todos,124,49,21,22.6
+2024-05,Tienda Online,84,34,13,25.0
+2024-05,Tiendas Físicas,50,27,7,40.0
+2024-05,Todos,134,61,20,30.6
+2024-06,Tienda Online,89,39,13,29.2
+2024-06,Tiendas Físicas,60,29,6,38.3
+2024-06,Todos,149,68,19,32.9
+2024-07,Tienda Online,50,16,19,-6.0
+2024-07,Tiendas Físicas,47,26,8,38.3
+2024-07,Todos,97,42,27,15.5
+2024-08,Tienda Online,68,16,34,-26.5
+2024-08,Tiendas Físicas,52,29,5,46.2
+2024-08,Todos,120,45,39,5.0
+2024-09,Tienda Online,106,33,35,-1.9
+2024-09,Tiendas Físicas,62,32,10,35.5
+2024-09,Todos,168,65,45,11.9
+2024-10,Tienda Online,94,42,12,31.9
+2024-10,Tiendas Físicas,42,22,5,40.5
+2024-10,Todos,136,64,17,34.6
+2024-11,Tienda Online,121,59,16,35.5
+2024-11,Tiendas Físicas,48,25,4,43.8
+2024-11,Todos,169,84,20,37.9
+2024-12,Tienda Online,139,55,27,20.1
+2024-12,Tiendas Físicas,78,45,7,48.7
+2024-12,Todos,217,100,34,30.4
+2025-01,Tienda Online,136,63,25,27.9
+2025-01,Tiendas Físicas,55,29,6,41.8
+2025-01,Todos,191,92,31,31.9
+2025-02,Tienda Online,99,46,13,33.3
+2025-02,Tiendas Físicas,63,38,2,57.1
+2025-02,Todos,162,84,15,42.6
+2025-03,Tienda Online,111,48,14,30.6
+2025-03,Tiendas Físicas,74,41,13,37.8
+2025-03,Todos,185,89,27,33.5
+2025-04,Tienda Online,100,52,17,35.0
+2025-04,Tiendas Físicas,44,24,6,40.9
+2025-04,Todos,144,76,23,36.8
+2025-05,Tienda Online,117,58,21,31.6
+2025-05,Tiendas Físicas,41,24,4,48.8
+2025-05,Todos,158,82,25,36.1
+2025-06,Tienda Online,101,48,11,36.6
+2025-06,Tiendas Físicas,62,31,6,40.3
+2025-06,Todos,163,79,17,38.0
+2025-07,Tienda Online,102,42,16,25.5
+2025-07,Tiendas Físicas,41,20,6,34.1
+2025-07,Todos,143,62,22,28.0
+2025-08,Tienda Online,93,37,15,23.7
+2025-08,Tiendas Físicas,52,25,4,40.4
+2025-08,Todos,145,62,19,29.7
+2025-09,Tienda Online,104,49,23,25.0
+2025-09,Tiendas Físicas,29,13,3,34.5
+2025-09,Todos,133,62,26,27.1
+Todos,Tienda Online,1991,854,376,24.0
+Todos,Tiendas Físicas,1092,574,127,40.9
+Todos,Todos,3083,1428,503,30.0

@@ -114,30 +114,36 @@ erDiagram
         VARCHAR device
     }
     mart_nps_mensual {
-        DATE mes
+        VARCHAR mes
         VARCHAR canal
         BIGINT respuestas
         HUGEINT promotores
         HUGEINT detractores
+        DOUBLE nps
     }
     mart_ranking_productos_mensual {
-        DATE mes
+        VARCHAR mes
+        VARCHAR canal
+        VARCHAR provincia
         VARCHAR producto
         HUGEINT unidades
         DECIMAL ventas_sin_iva
         BIGINT puesto
     }
     mart_usuarios_activos_mensual {
-        DATE mes
+        VARCHAR mes
         BIGINT usuarios_activos
         BIGINT visitas_anonimas
         BIGINT visitas
     }
     mart_ventas_mensual {
-        DATE mes
+        VARCHAR mes
         VARCHAR canal
         VARCHAR provincia
+        VARCHAR producto
         BIGINT pedidos
-        DECIMAL ventas
+        HUGEINT unidades
+        DOUBLE ventas
+        DOUBLE ticket_promedio
     }
 ```
