@@ -427,3 +427,96 @@ main { padding: 0 clamp(16px, 4vw, 48px); }
 @media (prefers-reduced-motion: reduce) {
   .capa, .ola, .ranking .barra, .ranking li { transition: none; }
 }
+
+/* ---------- Pantalla de compu: todo el tablero en una sola vista ---------- */
+
+@media (min-width: 1100px) {
+  .top { padding-top: 10px; }
+  .brand { font-size: 1.1rem; }
+  .corte { font-size: 0.82rem; }
+
+  .filtros {
+    margin-top: 4px;
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+
+  .campo > span,
+  .campo > legend { font-size: 0.8rem; }
+
+  select,
+  .segmentos button { padding-top: 5px; padding-bottom: 5px; }
+
+  main {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    column-gap: 40px;
+    align-items: stretch;
+  }
+
+  .series,
+  .cortes { grid-column: 1 / -1; }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 28px;
+    padding: 14px 0 10px;
+  }
+
+  .hero h1 {
+    max-width: 19ch;
+    font-size: clamp(1.9rem, 2.7vw, 2.75rem);
+    line-height: 1.04;
+  }
+
+  .hero-sub {
+    margin-top: 12px;
+    font-size: 1rem;
+  }
+
+  .botella { gap: 14px; }
+  .botella svg { width: 88px; }
+  .mezcla-titulo { font-size: 0.95rem; margin-bottom: 8px; }
+  .mezcla { gap: 8px; }
+  .mezcla .monto { font-size: 1.05rem; }
+
+  .kpis {
+    grid-template-columns: 1fr 1fr;
+    align-self: center;
+    border-bottom: 0;
+  }
+
+  .kpi,
+  .kpi + .kpi {
+    padding: 8px 16px 8px 0;
+    border-left: 0;
+  }
+
+  .kpi:nth-child(even) {
+    padding-left: 16px;
+    border-left: 1px solid var(--linea);
+  }
+
+  .kpi:nth-child(n+3) { border-top: 1px solid var(--linea); }
+
+  .kpi .valor {
+    margin: 2px 0;
+    font-size: clamp(1.6rem, 2.2vw, 2.15rem);
+  }
+
+  .kpi .nota { font-size: 0.8rem; }
+
+  .series { border-top: 1px solid var(--linea); }
+
+  .grafico { padding: 10px 0 4px; }
+  .grafico figcaption h2 { font-size: 1.05rem; }
+  .grafico figcaption p { margin: 0 0 6px; font-size: 0.82rem; }
+
+  .lienzo { height: 150px; }
+  .lienzo-bajo { height: 132px; }
+
+  .ranking { gap: 8px; }
+  .ranking .puesto { font-size: 1.8rem; }
+
+  .pie { padding-top: 10px; padding-bottom: 14px; }
+}
